@@ -4,7 +4,8 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Titular {
-    final char SEXO_POR_DEFECTO = 'H';
+    final
+    char SEXO_POR_DEFECTO = 'H';
     final String CADENA_VACIA = "";
     final int DIAS_EN_18_ANIOS = 6570;
     private String nombre;

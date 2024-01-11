@@ -21,4 +21,3 @@ public class Finanzas {
         return euro / dolarEuro;
     }
 }
-

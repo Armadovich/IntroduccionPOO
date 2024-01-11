@@ -3,13 +3,11 @@ package Satelite;
 public class Satelite {
 
     private double distanciaATierra;
-    private boolean enOrbita;
     private double paralelo;
     private double meridiano;
 
-    public Satelite(double distanciaATierra, boolean enOrbita, double paralelo, double meridiano) {
+    public Satelite(double distanciaATierra,  double paralelo, double meridiano) {
         this.distanciaATierra = distanciaATierra;
-        this.enOrbita = enOrbita;
         this.paralelo = paralelo;
         this.meridiano = meridiano;
     }
@@ -19,7 +17,7 @@ public class Satelite {
     }
 
     public boolean enOrbita(){
-        return this.enOrbita;
+        return distanciaATierra != 0;
     }
 
     public void variaPosicion(double variap, double variam){

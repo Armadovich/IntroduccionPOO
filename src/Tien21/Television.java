@@ -33,7 +33,7 @@ public class Television extends Electrodomestico {
 
     public double precioFinal(){
         double precioFinal = super.precioFinal();
-        precioFinal *= (resolucion > 40) ? 0.3 : 0;
+        precioFinal *= (resolucion > 40) ? 1.3 : 1;
         precioFinal += (sintonizadorTDT) ? 50 : 0;
         return precioFinal;
     }

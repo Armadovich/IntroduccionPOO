@@ -1,10 +1,10 @@
 package Tien21;
 
 public class Electrodomestico {
-    final String COLOR_POR_DEFECTO = "blanco";
-    final double PRECIO_POR_DEFECTO = 100;
-    final char CONSUMO_POR_DEFECTO = 'F';
-    final double PESO_POR_DEFECTO = 5;
+    private final String COLOR_POR_DEFECTO = "blanco";
+    private final double PRECIO_POR_DEFECTO = 100;
+    private final char CONSUMO_POR_DEFECTO = 'F';
+    private final double PESO_POR_DEFECTO = 5;
 
 
     private double precioBase;
@@ -45,33 +45,16 @@ public class Electrodomestico {
         }
         return COLOR_POR_DEFECTO;
     }
-    public void precioFinal(){
-        switch (consumoEnergetico){
-            case 'a':
-            case 'A':
-                precioBase += 100;
-                break;
-            case 'b':
-            case 'B':
-                precioBase += 80;
-                break;
-            case 'c':
-            case 'C':
-                precioBase += 60;
-                break;
-            case 'd':
-            case 'D':
-                precioBase += 50;
-                break;
-            case 'e':
-            case 'E':
-                precioBase += 30;
-                break;
-            case 'f':
-            case 'F':
-                precioBase += 10;
-                break;
-        }
+    public double precioFinal(){
+        return switch (consumoEnergetico) {
+            case 'a', 'A' -> precioBase + 100;
+            case 'b', 'B' -> precioBase + 80;
+            case 'c', 'C' -> precioBase + 60;
+            case 'd', 'D' -> precioBase + 50;
+            case 'e', 'E' -> precioBase + 30;
+            case 'f', 'F' -> precioBase + 10;
+            default -> precioBase;
+        };
     }
 
 

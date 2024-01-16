@@ -1,0 +1,109 @@
+package Tien21;
+
+public class Electrodomestico {
+    final String COLOR_POR_DEFECTO = "blanco";
+    final double PRECIO_POR_DEFECTO = 100;
+    final char CONSUMO_POR_DEFECTO = 'F';
+    final double PESO_POR_DEFECTO = 5;
+
+
+    private double precioBase;
+    private String color;
+    private char consumoEnergetico;
+    private double peso;
+
+    public Electrodomestico() {
+        this.precioBase = PRECIO_POR_DEFECTO;
+        this.color = COLOR_POR_DEFECTO;
+        this.consumoEnergetico = CONSUMO_POR_DEFECTO;
+        this.peso = PESO_POR_DEFECTO;
+    }
+
+    public Electrodomestico(double precioBase, double peso) {
+        this.precioBase = precioBase;
+        this.peso = peso;
+        this.color = COLOR_POR_DEFECTO;
+        this.consumoEnergetico = CONSUMO_POR_DEFECTO;
+
+    }
+
+    public Electrodomestico(double precioBase, String color, char consumoEnergetico, double peso) {
+        this.precioBase = precioBase;
+        this.color = comprobarColor(color);
+        this.consumoEnergetico = comprobarConsumoEnergetico(consumoEnergetico);
+        this.peso = peso;
+    }
+
+    private char comprobarConsumoEnergetico(char letra){
+        if ((letra >= 'A' && letra <= 'F')||(letra >= 'a' && letra <= 'f')) return letra;
+        else return CONSUMO_POR_DEFECTO;
+    }
+    private String comprobarColor(String color){
+        String[] arrayColores = {"blanco","negro","rojo","azul","gris"};
+        for (String arrayColore : arrayColores) {
+            if (arrayColore.equalsIgnoreCase(color)) return color;
+        }
+        return COLOR_POR_DEFECTO;
+    }
+    public void precioFinal(){
+        switch (consumoEnergetico){
+            case 'a':
+            case 'A':
+                precioBase += 100;
+                break;
+            case 'b':
+            case 'B':
+                precioBase += 80;
+                break;
+            case 'c':
+            case 'C':
+                precioBase += 60;
+                break;
+            case 'd':
+            case 'D':
+                precioBase += 50;
+                break;
+            case 'e':
+            case 'E':
+                precioBase += 30;
+                break;
+            case 'f':
+            case 'F':
+                precioBase += 10;
+                break;
+        }
+    }
+
+
+    public double getPrecioBase() {
+        return precioBase;
+    }
+
+    public void setPrecioBase(double precioBase) {
+        this.precioBase = precioBase;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public char getConsumoEnergetico() {
+        return consumoEnergetico;
+    }
+
+    public void setConsumoEnergetico(char consumoEnergetico) {
+        this.consumoEnergetico = consumoEnergetico;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+}

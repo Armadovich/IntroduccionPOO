@@ -1,9 +1,9 @@
 package Maquinas;
 
-public class Industrial extends Maquina{
+public class MaqIndustrial extends Maquina{
     private int potenciaConsumo;
 
-    public Industrial(int numeroDeSerie, String modelo, int horasFuncionamiento, int potenciaConsumo) {
+    public MaqIndustrial(int numeroDeSerie, String modelo, int horasFuncionamiento, int potenciaConsumo) {
         super(numeroDeSerie, modelo, horasFuncionamiento);
         this.potenciaConsumo = potenciaConsumo;
     }
@@ -17,12 +17,12 @@ public class Industrial extends Maquina{
     }
 
     @Override
-    public void encendido() {
-
+    public void encender() {
+        System.out.println("Encendiendo Maquina Industrial");
     }
 
     @Override
-    public void apagado() {
-
+    public void apagar() {
+        System.out.println("Apagando Maquina Industrial");
     }
 }

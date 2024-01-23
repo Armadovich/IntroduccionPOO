@@ -41,6 +41,6 @@ public abstract class Maquina {
         this.horasFuncionamiento = horasFuncionamiento;
     }
 
-    public abstract void encendido();
-    public abstract void apagado();
-}
+    public abstract void encender();
+    public abstract void apagar();
+

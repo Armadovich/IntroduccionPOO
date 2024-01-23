@@ -42,5 +42,7 @@ public abstract class Maquina {
     }
 
     public abstract void encender();
+
     public abstract void apagar();
+}
 

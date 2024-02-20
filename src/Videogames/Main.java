@@ -3,6 +3,7 @@ package Videogames;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+
 public class Main {
     public static void main(String[] args) {
         llenarHashSet();
@@ -10,7 +11,6 @@ public class Main {
         contarEntregados();
         encontrarSerieMayorNumTemporadas();
         encontrarVideojuegoMayoresHoras();
-
 
     }
     static ArrayList<Serie> series = new ArrayList<>();
@@ -41,9 +41,9 @@ public class Main {
         System.out.println("Videojuegos entregados: " + videojuegos.stream().filter(Videojuego::isEntregado).count());
     }
     public static String encontrarSerieMayorNumTemporadas(){
-        return series.stream().max(Comparator.comparing(Serie::getNumTemporadas)).get().toString();
+        return series.stream().max(Comparator.comparing(Serie::getNumTemporadas)).toString();
     }
     public static String encontrarVideojuegoMayoresHoras(){
-        return videojuegos.stream().max(Comparator.comparing(Videojuego::getHorasEstimadas)).get().toString();
+        return videojuegos.stream().max(Comparator.comparing(Videojuego::getHorasEstimadas)).toString();
     }
 }

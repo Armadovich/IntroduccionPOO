@@ -16,6 +16,19 @@ public abstract class Empleado {
         this.salario = salario;
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     public String getNombre() {
         return nombre;
     }
